@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Results summary component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
+    *{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    main{
+      font-family: "Hanken Grotesk", system-ui;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 40rem;
+      display: flex;
+      border-radius: 15px;
+      box-shadow: rgba(119, 156, 175, 0.15) 0.5rem 0.5rem 1rem;
+    }
+    p{
+      font-size: 18px;
+    }
+    .result{
+      padding: 2rem;
+      border-radius: 15px;
+      background: rgb(120,87,255);
+      background: linear-gradient(180deg, rgba(120,87,255,1) 0%, rgba(46,43,233,1) 70%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      width: 35rem;
+      text-align: center;
+      color: hsl(221, 100%, 96%);
+      p{
+        font-weight: 500;
+        font-size: 14px;
+        color: hsl(241, 100%, 89%);
+        
+      }
+      .pt{
+        width: 195px;
+      }
+    }
+    .circle{
+      background: rgb(78,33,202);
+      background: linear-gradient(180deg, rgba(78,33,202,1) 0%, rgba(36,33,202,1) 100%);
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      h1{
+        font-weight: 900;
+        font-size: 3rem;
+      }
+
+    }
+    .summary{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding: 2rem;
+      h3{
+        color: hsl(224, 30%, 27%);
+      }
+      .reaction{
+        background-color: hsla(0, 100%, 67%, 0.1);
+        .test{
+          p{
+            color: hsl(0, 100%, 67%);
+            font-weight: 500;
+          }
+        }
+        
+      }
+      .memory{
+        background-color: hsla(39, 100%, 56%, 0.1);
+        .test{
+          p{
+            color: hsl(39, 100%, 56%);
+            font-weight: 500;
+          }
+        }
+      }
+      .verbal{
+        background-color: hsla(166, 100%, 37%, 0.1);
+        .test{
+          p{
+            color: hsl(166, 100%, 37%);
+            font-weight: 500;
+          }
+        }
+      }
+      .visual{
+        background-color: hsla(234, 85%, 45%, 0.1);
+        .test{
+          p{
+            color: hsl(234, 85%, 45%);
+            font-weight: 500;
+          }
+        }
+      }
+      .card{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.7rem 1rem;
+        border-radius: 5px;
+        max-width: 100%;
+        margin-top: 1rem;
+        p{
+          color:hsl(224, 30%, 27%);
+          font-weight: 800; 
+        }
+      }
+      button{
+        margin-top: 2rem;
+        padding: 1rem;
+        border-radius: 50px;
+        border: none;
+        background-color: hsl(224, 30%, 27%);
+        color: white;
+        font-size: 18px;
+        cursor: pointer;
+      }
+      button:hover{
+        background: rgb(120,87,255);
+        background: linear-gradient(180deg, rgba(120,87,255,1) 0%, rgba(46,43,233,1) 70%);
+      }
+    }
+    .test{
+      display: flex;
+      gap: 0.5rem;
+    }
+    span{
+      font-weight: 500;
+      color: hsl(241, 100%, 89%);
+      margin-left: 0.3rem;
+    }
+    .attribution { font-size: 11px; text-align: center; padding-top: 96svh;}
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    @media screen and (max-width:660px) {
+      main{
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        .result{
+          width: 100%;
+          border-top-left-radius: 0;
+          border-top-right-radius: 0;
+        }
+        .summary{
+          button{
+            margin-top: 1rem;
+          }
+        }
+        .card{
+          margin-bottom: 1rem;
+        }
+      }
+      .attribution{
+        display: none;
+      }
+    }
+    @media screen and (max-width:430px){
+      
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="result">
+      <h3>Your Result</h3>
+      <div class="circle">
+        <h1>76</h1>
+        <p>of 100</p>
+      </div>
+      <h2>Great</h2>
+      <p class="pt">You scored higher than 65% of the people who have taken these tests.</p>
+    </div>
+    <div class="summary">
+      <h3>Summary</h3>
+      <div class="reaction card">
+        <div class="test">
+          <img src="assets/images/icon-reaction.svg" alt="reaction">
+          <p>Reaction</p>
+        </div>
+        <p>80 <span>/ 100</span></p>
+      </div>
+      <div class="memory card">
+        <div class="test">
+          <img src="assets/images/icon-memory.svg" alt="memory">
+          <p>Memory</p>
+        </div>
+        <p>92 <span>/ 100</span></p>
+      </div>
+      <div class="verbal card">
+        <div class="test">
+          <img src="assets/images/icon-verbal.svg" alt="verbal">
+          <p>Verbal</p>
+        </div>
+        <p>61 <span>/ 100</span></p>
+      </div>
+      <div class="visual card">
+        <div class="test">
+          <img src="assets/images/icon-visual.svg" alt="visual">
+          <p>Visual</p>
+        </div>
+        <p>72 <span>/ 100</span></p>
+      </div>
+      <button type="button">Continue</button>
+    </div>
+  </main>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+</html>
